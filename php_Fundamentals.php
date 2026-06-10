@@ -18,7 +18,13 @@ echo $c."\n"; // prints 15, the decimal value of the hexadecimal variable
 echo $d."null\n"; // prints nothing, as the null variable has no value
 echo $e."\n"; // prints 1234567, the value of the integer variable with underscores
 $greeting = "Hello World!"; //string variable
+$gmail = <<<MSG
+Hello, this is our support team.\n
+We are here to help you with any issues you may have.\n
+Please feel free to contact us at any time.\n
+MSG;
 echo $greeting."\n"; //prints Hello World!
+echo "\n".$gmail."\n"; // prints the multi-line string defined using heredoc syntax
 echo "The value of a is: ".$a."\n"; // prints the value of a, which is 5
 // Arrays
 $numbers = [1, 2, 3, 4, 5]; // indexed array
@@ -34,4 +40,19 @@ echo $person["name"]."\n"; // prints John, the value of the "name" key
 $person["age"] = 31; // changes the value of the "age" key to 31
 print_r($person);
 echo count($person),"\n"; // prints the number of key-value pairs in the associative array
+// Iterables
+function printIterable(iterable $iterable) {
+    return [1, 2, 3];
+}
+function gen(): iterator {
+    yield 1; // yields the value 1
+    yield 2; // yields the value 2
+    yield 3; // yields the value 3
+}
+$iterable = printIterable($numbers); // calls the function and assigns the returned array to the variable $iterable
+print_r($iterable); // prints the contents of the iterable variable
+foreach (printIterable($numbers) as $value) { // iterates over the iterable variable and prints each value
+    echo $value."\n"; // prints each value of the iterable variable
+    }
+
 ?>
