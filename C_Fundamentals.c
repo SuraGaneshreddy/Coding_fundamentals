@@ -24,7 +24,7 @@ int main()
     int c = 30;
     printf("%-9d %-9d %d\n", a, b, c); // Left align
     printf("%9d %9d %9d\n", a, b, c); // Right align
-    // Operators
+    // Operators. Logical Operators: && (logical AND), || (logical OR), ! (logical NOT)
     int a = 5, b = 3;
     printf("%d + %d = %d\n", a, b,  a + b);
     printf("%d - %d = %d\n", a, b, a - b);
@@ -163,6 +163,41 @@ int main()
         }
         printf("\n");
     }
-    */
+    // Enumerator
+    // By default, the first enumerator has the value 0, and each subsequent enumerator's value is incremented by 1.
+    // However you can assign specific values to the enumerators,
+    // and the subsequent enumerators will continue incrementing from that value.
+    enum week {Mon = 7, tues, wed, thurs, fri, sat, sun} day;
+    printf("Please enter a number between 7 and 13 :");
+    scanf("%d", &day);
+    switch (day) {
+        case Mon: printf("Monday\n");break;
+        case tues: printf("Tuesday\n");break;
+        case wed: printf("Wednesday\n");break;
+        case thurs: printf("Thursday\n");break;
+        case fri: printf("Friday\n");break;
+        case sat: printf("Saturday\n");break;
+        case sun: printf("Sunday\n");break;
+        default: printf("Invalid input! Please enter a number between 7 and 13 : ");break;
+    }
+    // memory address
+    int myage = 30;
+    int *ptr  = &myage; // Use * to declare a pointer variable and & to get the address of the variable
+    printf("%d\n", myage); // print the value of the variable
+    printf("%d\n", *ptr); // Use * to deference the pointer variable to get the value stored at that address
+    printf("%p\n", ptr); // print the address stored in the pointer variable
+    printf("%p\n", &myage); // Use & to get the address of the variable
+    // Difference b/w pinter and normal variable
+    int u = 10;
+    int v = u;
+    printf("%d\n", v);
+    printf("%p\n", &u);
+    printf("%p\n", &v);
     return 0;
+    */
+    // unsigned int: It is a data type that can only store non-negative integers (0 and positive integers).
+    unsigned int a=5, b=3;
+    int c = a & b; // Bitwise AND
+    printf("%d\n", c);
+    
 }
